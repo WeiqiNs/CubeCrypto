@@ -2,11 +2,13 @@
 
 import math
 import random
-import numpy as np
-from typing import List
 from collections import deque
+from typing import List
+
+import numpy as np
+
 from src.encbit.cube import Cube
-from src.helper.constant import Key, CUBIE_LENGTH
+from src.helper.constant import CUBIE_LENGTH, Key
 from src.helper.utility import binary_to_string, string_to_binary
 
 

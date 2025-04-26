@@ -1,5 +1,5 @@
-from src.helper.constant import Key
 from src.encitem.encryption import Encryption
+from src.helper.constant import Key
 
 
 class TestEncryption:

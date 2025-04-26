@@ -1,10 +1,12 @@
 """Define contents and operations of the entire cube that holds items."""
 
 import math
+
 import numpy as np
+
 from src.encitem.face import Face
-from src.helper.constant import Key, CubeMove, WRONG_CUBE_MOVE, \
-    WRONG_CUBE_INPUT, WRONG_CUBE_SIDE_LENGTH
+from src.helper.constant import CubeMove, Key, WRONG_CUBE_INPUT, \
+    WRONG_CUBE_MOVE, WRONG_CUBE_SIDE_LENGTH
 
 
 class Cube:

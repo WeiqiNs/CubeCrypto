@@ -1,9 +1,10 @@
 """Defines the key length analyzer."""
 import operator
+from collections import namedtuple
 from functools import reduce
 from typing import List, Optional
-from collections import namedtuple
-from src.helper.constant import Key, CUBE_MOVE, COMMUTE_MOVE
+
+from src.helper.constant import COMMUTE_MOVE, CUBE_MOVE, Key
 
 
 class KeyAnalyzer:
@@ -37,7 +38,7 @@ class KeyAnalyzer:
 
     @staticmethod
     def _merge_commute_key_list(commute_key: List[Key]) -> Optional[List[Key]]:
-        """Given a list of commute keys, merge keys with the same move and index.
+        """Given a list of commute keys, merge keys with same move and index.
 
         :param commute_key: A list of commute keys.
         :return: The reduced list of keys.

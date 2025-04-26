@@ -1,7 +1,8 @@
 import numpy as np
+
 from src.encitem.cube import Cube
-from src.helper.constant import Key, CubeMove, WRONG_CUBE_MOVE, \
-    WRONG_CUBE_INPUT, WRONG_CUBE_SIDE_LENGTH
+from src.helper.constant import CubeMove, Key, WRONG_CUBE_INPUT, \
+    WRONG_CUBE_MOVE, WRONG_CUBE_SIDE_LENGTH
 
 
 # noinspection PyProtectedMember

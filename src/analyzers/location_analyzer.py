@@ -2,8 +2,9 @@
 
 import math
 from typing import List
+
 from src.encbit.cube import Cube
-from src.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
+from src.helper.constant import CUBE_MOVE, Key, MOVE_ANGLE
 
 
 class CubieLocationAnalyzer:

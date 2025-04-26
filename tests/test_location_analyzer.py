@@ -1,6 +1,7 @@
 import numpy as np
-from src.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
+
 from src.analyzers.location_analyzer import CubieLocationAnalyzer
+from src.helper.constant import CUBE_MOVE, Key, MOVE_ANGLE
 
 
 # noinspection PyProtectedMember

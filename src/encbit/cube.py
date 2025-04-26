@@ -2,9 +2,11 @@
 
 import math
 from typing import List
+
 from src.encbit.face import Face
-from src.helper.constant import WRONG_CUBE_INPUT, CUBIE_LENGTH, \
-    CubeMove, WRONG_CUBE_MOVE, WRONG_CUBE_SIDE_LENGTH, CubieItem, Key
+from src.helper.constant import CubeMove, CUBIE_LENGTH, CubieItem, Key, \
+    WRONG_CUBE_INPUT, WRONG_CUBE_MOVE, \
+    WRONG_CUBE_SIDE_LENGTH
 from src.helper.utility import xor
 
 

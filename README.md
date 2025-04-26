@@ -1,8 +1,6 @@
 ### Rubik's Cube Encryption
-[![Build Status](https://travis-ci.com/Weiqi97/Cube-Crypto.svg?branch=master)](https://travis-ci.com/Weiqi97/Cube-Crypto)
-[![Build status](https://ci.appveyor.com/api/projects/status/5le32990x1837tg4/branch/master?svg=true)](https://ci.appveyor.com/project/Weiqi97/cube-crypto/branch/master)
+[![codecov](https://codecov.io/gh/WeiqiNs/CubeCrypto/graph/badge.svg?token=nLPYss2X9g)](https://codecov.io/gh/WeiqiNs/CubeCrypto)
 [![Documentation Status](https://readthedocs.org/projects/pydocs/badge/?version=latest)](https://pydocs.readthedocs.io/en/latest/?badge=latest)
-[![codecov](https://codecov.io/gh/Weiqi97/Cube-Crypto/branch/master/graph/badge.svg)](https://codecov.io/gh/Weiqi97/Cube-Crypto)
 
 This repository is the implementation of the Rubik's Cube symmetric encryption protocol described [here](https://github.com/Weiqi97/Honor-Thesis).
 

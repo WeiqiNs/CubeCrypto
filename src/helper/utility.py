@@ -1,12 +1,14 @@
 """Define the helper functions that may accessed by different parts."""
 
+import binascii
 import math
 import random
-import binascii
-import pandas as pd
-from typing import List
 from collections import deque
-from src.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
+from typing import List
+
+import pandas as pd
+
+from src.helper.constant import CUBE_MOVE, Key, MOVE_ANGLE
 
 
 def generate_random_keys(length: int, max_index: int) -> List[Key]:

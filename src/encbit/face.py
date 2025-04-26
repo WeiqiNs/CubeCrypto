@@ -1,15 +1,17 @@
 """Define contents and operations of one cube face that contains bits."""
 
-import math
 import itertools
+import math
+from collections import deque
+from typing import List
+
 import numpy as np
 import pandas as pd
-from typing import List
-from collections import deque
+
 from src.encbit.cubie import Cubie
-from src.helper.constant import CUBIE_LENGTH, WRONG_SIDE_LENGTH, \
-    WRONG_CUBE_FACE_INPUT, WRONG_FRAME_INDEX_NAME, WRONG_FRAME_COLUMN_NAME, \
-    CubieItem
+from src.helper.constant import CUBIE_LENGTH, CubieItem, WRONG_CUBE_FACE_INPUT, \
+    WRONG_FRAME_COLUMN_NAME, \
+    WRONG_FRAME_INDEX_NAME, WRONG_SIDE_LENGTH
 
 
 class Face:

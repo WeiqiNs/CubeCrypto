@@ -1,5 +1,5 @@
-from src.helper.utility import generate_random_keys
 from src.analyzers.bit_analyzer import analyze_bit
+from src.helper.utility import generate_random_keys
 
 
 def test_bit_analyzer():

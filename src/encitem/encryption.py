@@ -2,11 +2,13 @@
 
 import random
 import string
-import numpy as np
-from typing import List
 from collections import deque
-from src.helper.constant import Key
+from typing import List
+
+import numpy as np
+
 from src.encitem.cube import Cube
+from src.helper.constant import Key
 
 
 class Encryption:

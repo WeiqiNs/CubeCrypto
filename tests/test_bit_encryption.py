@@ -1,5 +1,5 @@
-from src.helper.constant import Key
 from src.encbit.encryption import Encryption
+from src.helper.constant import Key
 
 
 # noinspection PyProtectedMember

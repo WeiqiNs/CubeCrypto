@@ -1,7 +1,8 @@
 import copy
+
 from src.encbit.cube import Cube
-from src.helper.constant import CubeMove, WRONG_CUBE_MOVE, \
-    WRONG_CUBE_INPUT, WRONG_CUBE_SIDE_LENGTH, Key
+from src.helper.constant import CubeMove, Key, WRONG_CUBE_INPUT, \
+    WRONG_CUBE_MOVE, WRONG_CUBE_SIDE_LENGTH
 
 
 # noinspection PyProtectedMember

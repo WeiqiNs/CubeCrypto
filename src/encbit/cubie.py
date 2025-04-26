@@ -1,9 +1,11 @@
 """Define contents and operations of one cubie."""
 
 from __future__ import annotations
-from typing import List
+
 from collections import deque
-from src.helper.constant import CubieItem, MOVE_ANGLE, CUBIE_LENGTH, \
+from typing import List
+
+from src.helper.constant import CUBIE_LENGTH, CubieItem, MOVE_ANGLE, \
     WRONG_CUBIE_INPUT, WRONG_ROTATION_ANGLE
 
 
