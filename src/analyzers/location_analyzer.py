@@ -12,8 +12,8 @@ class CubieLocationAnalyzer:
     def __init__(self, cube_side_length: int, track_item_location: int):
         """Initialize the cubie location analyzer with desired parameters.
 
-        :param cube_side_length: Length of the cube desired to be analyzed.
-        :param track_item_location: Locations of item interested.
+        :param cube_side_length: The length of the cube desired to be analyzed.
+        :param track_item_location: Locations of item of interest.
         """
         # Store the cube side length.
         self._side_length = cube_side_length
@@ -51,7 +51,7 @@ class CubieLocationAnalyzer:
         return temp_cube.get_tracked_location() != self._track_item_location
 
     def _get_effective_key(self) -> List[Key]:
-        """Get all the keys that moves the tracked item with fixed 90 degrees.
+        """Get all the keys that move the tracked item with fixed 90 degrees.
 
         :return: A list of effective keys with fixed 90 degrees.
         """
@@ -61,7 +61,7 @@ class CubieLocationAnalyzer:
         ]
 
     def _get_all_effective_key(self) -> List[Key]:
-        """Get all the keys that moves the tracked item with any angles.
+        """Get all the keys that move the tracked item with any angles.
 
         :return: A list of effective keys with any degree.
         """
@@ -72,9 +72,9 @@ class CubieLocationAnalyzer:
         ]
 
     def _get_location(self, key: Key) -> int:
-        """Get location of the tracked item after performing a effective key.
+        """Get the location of the tracked item after performing an effective key.
 
-        :param key: One known effective effective key.
+        :param key: One known effective key.
         :return: New location of the tracked item.
         """
         # Make a new copy of the cube.
@@ -113,7 +113,7 @@ class CubieLocationAnalyzer:
         return cube.get_tracked_location()
 
     def location_tracker(self, keys: List[Key]) -> List[int]:
-        """Track position of a specific bit when moves are performed.
+        """Track the position of a specific bit when moves are performed.
 
         :param keys: A list of cube movements.
         :return: A list of integers which each represent a location.

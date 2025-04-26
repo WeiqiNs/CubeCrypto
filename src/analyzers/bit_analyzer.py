@@ -28,7 +28,7 @@ def analyze_bit(key: List[Key],
         cube.shift_cubie_content()
         cube.shift(key=each_key)
 
-    # Count number of zeros and number of ones.
+    # Count the number of zeros and number of ones.
     return {
         "0": cube.content.count("0"),
         "1": cube.content.count("1")

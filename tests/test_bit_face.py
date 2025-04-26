@@ -37,14 +37,14 @@ class TestCubeFace:
             deque(["T2", "T1", "C", "D1", "D2"])
 
     def test_cube_row(self):
-        # Get rows and check if they contain desired value.
+        # Get rows and check if they contain the desired value.
         row_t1 = self.cube_face.get_row(row_name="T1")
-        assert row_t1[0].get_content_string() == "0001"
+        assert row_t1.iloc[0].get_content_string() == "0001"
         row_d1 = self.cube_face.get_row(row_name="D1")
-        assert row_d1[0].get_content_string() == "1010"
+        assert row_d1.iloc[0].get_content_string() == "1010"
 
     def test_cube_fill_row(self):
-        # Create new testing cube face since the value get changed.
+        # Create a new testing cube face since the value get changed.
         cube_face = Face(
             cube_face_input=self.face_input,
             cube_side_length=3
@@ -63,21 +63,21 @@ class TestCubeFace:
                 )
             ]
         )
-        # Get rows and check if they contain desired value.
+        # Get rows and check if they contain the desired value.
         row_t1 = cube_face.get_row(row_name="T1")
-        assert row_t1[0].get_content_string() == "1111"
+        assert row_t1.iloc[0].get_content_string() == "1111"
         row_d1 = self.cube_face.get_row(row_name="D1")
-        assert row_d1[0].get_content_string() == "1010"
+        assert row_d1.iloc[0].get_content_string() == "1010"
 
     def test_cube_col(self):
-        # Get cols and check if they contain desired value.
+        # Get cols and check if they contain the desired value.
         col_r1 = self.cube_face.get_col(col_name="R1")
-        assert col_r1[0].get_content_string() == "0101"
+        assert col_r1.iloc[0].get_content_string() == "0101"
         col_l1 = self.cube_face.get_col(col_name="L1")
-        assert col_l1[0].get_content_string() == "0001"
+        assert col_l1.iloc[0].get_content_string() == "0001"
 
     def test_cube_fill_col(self):
-        # Create new testing cube face since the value get changed.
+        # Create a new testing cube face since the value get changed.
         cube_face = Face(
             cube_face_input=self.face_input,
             cube_side_length=3
@@ -96,11 +96,11 @@ class TestCubeFace:
                 )
             ]
         )
-        # Get cols and check if they contain desired value.
+        # Get cols and check if they contain the desired value.
         col_r1 = cube_face.get_col(col_name="R1")
-        assert col_r1[0].get_content_string() == "1111"
+        assert col_r1.iloc[0].get_content_string() == "1111"
         col_l1 = cube_face.get_col(col_name="L1")
-        assert col_l1[0].get_content_string() == "0001"
+        assert col_l1.iloc[0].get_content_string() == "0001"
 
     def test_cube_row_str(self):
         # Get rows as strings and check if they equal to desired value.
@@ -110,7 +110,7 @@ class TestCubeFace:
         assert row_d1_str == "|1010|1010|1010|"
 
     def test_cube_face_rotate(self):
-        # Create new testing cube face since the value get changed.
+        # Create a new testing cube face since the value get changed.
         cube_face = Face(
             cube_face_input=self.face_input,
             cube_side_length=3

@@ -12,7 +12,7 @@ class KeyAnalyzer:
     def __init__(self, key: List[Key]):
         """Initialize the analyzer with the key to be analyzing.
 
-        :param key: A list of key object.
+        :param key: A list of key objects.
         """
         # Store the input list of keys to a class instance.
         self._key = key
@@ -37,7 +37,7 @@ class KeyAnalyzer:
 
     @staticmethod
     def _merge_commute_key_list(commute_key: List[Key]) -> Optional[List[Key]]:
-        """Given a list of commute keys, merge keys with same move and index.
+        """Given a list of commute keys, merge keys with the same move and index.
 
         :param commute_key: A list of commute keys.
         :return: The reduced list of keys.
