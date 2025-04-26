@@ -1,7 +1,7 @@
 import pandas as pd
-import content.helper.utility as utility
+import src.helper.utility as utility
 from collections import deque
-from content.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
+from src.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
 
 
 class TestUtility:

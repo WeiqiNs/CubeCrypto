@@ -1,8 +1,8 @@
 """Check how many bits of input will be changed."""
 
 from typing import List
-from content.helper.constant import Key
-from content.encrypt_bit.cube import Cube
+from src.helper.constant import Key
+from src.encbit.cube import Cube
 
 
 def analyze_bit(key: List[Key],

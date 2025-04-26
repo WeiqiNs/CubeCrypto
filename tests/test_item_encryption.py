@@ -1,5 +1,5 @@
-from content.helper.constant import Key
-from content.encrypt_item.encryption import Encryption
+from src.helper.constant import Key
+from src.encitem.encryption import Encryption
 
 
 class TestEncryption:

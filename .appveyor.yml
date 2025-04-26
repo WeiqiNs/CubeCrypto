@@ -1,14 +1,10 @@
-# Set up environment.
+# Set up the environment.
 environment:
-  # Run for both architecture for python 3.7.x
+  # Run for both architectures for python 3.7.x
   matrix:
-    - PYTHON: "C:\\Python37"
-      PYTHON_ARCH: "32"
+    - PYTHON: "C:\\Python312"
 
-    - PYTHON: "C:\\Python37-x64"
-      PYTHON_ARCH: "64"
-
-# Set python path.
+# Set the python path.
 init:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
 
@@ -26,6 +22,6 @@ test_script:
   - pydocstyle
 
   # Trigger unit test and find coverage.
-  - pytest --cov=content
+  - pytest --cov=src
 
 build: off

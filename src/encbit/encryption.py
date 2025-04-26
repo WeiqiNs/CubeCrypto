@@ -5,9 +5,9 @@ import random
 import numpy as np
 from typing import List
 from collections import deque
-from content.encrypt_bit.cube import Cube
-from content.helper.constant import Key, CUBIE_LENGTH
-from content.helper.utility import binary_to_string, string_to_binary
+from src.encbit.cube import Cube
+from src.helper.constant import Key, CUBIE_LENGTH
+from src.helper.utility import binary_to_string, string_to_binary
 
 
 class Encryption:
@@ -132,7 +132,7 @@ class Encryption:
                         index=each_key.index
                     )
                 )
-                # Shift content backward by one space.
+                # Shift src backward by one space.
                 cube.shift_cubie_content_back()
                 # Xor the cube.
                 cube.xor()

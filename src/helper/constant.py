@@ -21,7 +21,7 @@ class CubieItem(NamedTuple):
     marked: bool
 
 
-# The content of one key.
+# The src of one key.
 class Key(NamedTuple):
     """Define the components of a legal key."""
 

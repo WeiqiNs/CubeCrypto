@@ -1,5 +1,5 @@
-from content.helper.constant import Key
-from content.analyzers.key_analyzer import KeyAnalyzer
+from src.helper.constant import Key
+from src.analyzers.key_analyzer import KeyAnalyzer
 
 
 # noinspection PyProtectedMember

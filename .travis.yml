@@ -1,10 +1,9 @@
-# Set the language to be python and adjust environment.
+# Set the language to be python and adjust the environment.
 language: python
 sudo: required
-dist: xenial
 
 # Set the version of python to be the latest version.
-python: "3.7"
+python: "3.12"
 
 # Installations.
 install:
@@ -20,7 +19,7 @@ script:
   - pydocstyle
 
   # Trigger unit test and find coverage.
-  - pytest --cov=content
+  - pytest --cov=src
 
 # Find code coverage.
 after_success: codecov

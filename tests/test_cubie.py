@@ -1,5 +1,5 @@
-from content.encrypt_bit.cubie import Cubie
-from content.helper.constant import CubieItem, WRONG_CUBIE_INPUT, \
+from src.encbit.cubie import Cubie
+from src.helper.constant import CubieItem, WRONG_CUBIE_INPUT, \
     WRONG_ROTATION_ANGLE
 
 

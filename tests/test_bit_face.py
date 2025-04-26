@@ -1,7 +1,7 @@
 from collections import deque
-from content.encrypt_bit.cubie import Cubie
-from content.encrypt_bit.face import Face
-from content.helper.constant import WRONG_CUBE_FACE_INPUT, \
+from src.encbit.cubie import Cubie
+from src.encbit.face import Face
+from src.helper.constant import WRONG_CUBE_FACE_INPUT, \
     WRONG_SIDE_LENGTH, WRONG_FRAME_INDEX_NAME, WRONG_FRAME_COLUMN_NAME, \
     CubieItem
 

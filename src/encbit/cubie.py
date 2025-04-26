@@ -3,7 +3,7 @@
 from __future__ import annotations
 from typing import List
 from collections import deque
-from content.helper.constant import CubieItem, MOVE_ANGLE, CUBIE_LENGTH, \
+from src.helper.constant import CubieItem, MOVE_ANGLE, CUBIE_LENGTH, \
     WRONG_CUBIE_INPUT, WRONG_ROTATION_ANGLE
 
 
@@ -25,11 +25,11 @@ class Cubie:
         return list(self._content)
 
     def get_content_string(self) -> str:
-        """Return the Cubie content as a string."""
+        """Return the Cubie src as a string."""
         return "".join(map(lambda item: str(item.content), self._content))
 
     def rotate_by_angle(self, angle: int):
-        """Rotate the cubie content by desired angle.
+        """Rotate the cubie src by desired angle.
 
         :param angle: The angle of desired rotation.
         """
@@ -41,7 +41,7 @@ class Cubie:
         self._content.rotate(rotate_step)
 
     def get_rotate_by_angle(self, angle: int) -> Cubie:
-        """Rotate the cubie content by desired angle and return the result.
+        """Rotate the cubie src by desired angle and return the result.
 
         :param angle: The angle of desired rotation.
         """

@@ -6,7 +6,7 @@ import binascii
 import pandas as pd
 from typing import List
 from collections import deque
-from content.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
+from src.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
 
 
 def generate_random_keys(length: int, max_index: int) -> List[Key]:

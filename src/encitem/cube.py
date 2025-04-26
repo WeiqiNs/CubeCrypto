@@ -2,8 +2,8 @@
 
 import math
 import numpy as np
-from content.encrypt_item.face import Face
-from content.helper.constant import Key, CubeMove, WRONG_CUBE_MOVE, \
+from src.encitem.face import Face
+from src.helper.constant import Key, CubeMove, WRONG_CUBE_MOVE, \
     WRONG_CUBE_INPUT, WRONG_CUBE_SIDE_LENGTH
 
 
@@ -69,18 +69,18 @@ class Cube:
 
     def shift_content(self):
         """Shift the cube binary representation to right by one item."""
-        # Obtain the shifted content by padding the last bit to the first.
+        # Obtain the shifted src by padding the last bit to the first.
         shifted_content = [self.content[-1]] + self.content[:-1]
-        # Re-Init the class with new content.
+        # Re-Init the class with new src.
         self.__init__(
             cube_input=shifted_content, cube_side_length=self._side_length
         )
 
     def shift_content_back(self):
         """Shift the cube binary representation to left by one item."""
-        # Obtain the shifted content by padding the first bit to the last.
+        # Obtain the shifted src by padding the first bit to the last.
         shifted_content = self.content[1:] + [self.content[0]]
-        # Re-Init the class with new content.
+        # Re-Init the class with new src.
         self.__init__(
             cube_input=shifted_content, cube_side_length=self._side_length
         )

@@ -1,6 +1,6 @@
 import copy
-from content.encrypt_bit.cube import Cube
-from content.helper.constant import CubeMove, WRONG_CUBE_MOVE, \
+from src.encbit.cube import Cube
+from src.helper.constant import CubeMove, WRONG_CUBE_MOVE, \
     WRONG_CUBE_INPUT, WRONG_CUBE_SIDE_LENGTH, Key
 
 

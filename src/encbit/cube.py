@@ -2,10 +2,10 @@
 
 import math
 from typing import List
-from content.encrypt_bit.face import Face
-from content.helper.constant import WRONG_CUBE_INPUT, CUBIE_LENGTH, \
+from src.encbit.face import Face
+from src.helper.constant import WRONG_CUBE_INPUT, CUBIE_LENGTH, \
     CubeMove, WRONG_CUBE_MOVE, WRONG_CUBE_SIDE_LENGTH, CubieItem, Key
-from content.helper.utility import xor
+from src.helper.utility import xor
 
 
 class Cube:
@@ -148,14 +148,14 @@ class Cube:
 
     def shift_cubie_content(self):
         """Shift the cube binary representation to right by one bit."""
-        # Obtain the shifted content by padding the last bit to the first.
+        # Obtain the shifted src by padding the last bit to the first.
         shifted_content = f"{self.content[-1]}{self.content[:-1]}"
 
         # Find the the track location.
         track_location = None if self._track_location is None else \
             (self.get_tracked_location() + 1) % self._cube_size
 
-        # Re-Init the class with new content.
+        # Re-Init the class with new src.
         self.__init__(
             cube_input=shifted_content,
             track_location=track_location,
@@ -164,14 +164,14 @@ class Cube:
 
     def shift_cubie_content_back(self):
         """Shift the cube binary representation to left by one bit."""
-        # Obtain the shifted content by padding the first bit to the last.
+        # Obtain the shifted src by padding the first bit to the last.
         shifted_content = f"{self.content[1:]}{self.content[0]}"
 
         # Find the the track location.
         track_location = None if self._track_location is None else \
             (self.get_tracked_location() - 1) % self._cube_size
 
-        # Re-Init the class with new content.
+        # Re-Init the class with new src.
         self.__init__(
             cube_input=shifted_content,
             cube_side_length=self._side_length,
@@ -437,7 +437,7 @@ class Cube:
 
     def xor(self):
         """Xor the random face with each other faces."""
-        # Find the xor result and use it as the new content to initiate class.
+        # Find the xor result and use it as the new src to initiate class.
         xor_result = "".join([
             xor(
                 str_one=message_content,
@@ -446,7 +446,7 @@ class Cube:
             for message_content in self.message_content_list
         ])
 
-        # Re-Init the class with new content.
+        # Re-Init the class with new src.
         self.__init__(
             cube_input=xor_result + self.random_content,
             track_location=self._track_location,

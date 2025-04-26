@@ -2,8 +2,8 @@
 
 import math
 from typing import List
-from content.encrypt_bit.cube import Cube
-from content.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
+from src.encbit.cube import Cube
+from src.helper.constant import Key, CUBE_MOVE, MOVE_ANGLE
 
 
 class CubieLocationAnalyzer:
@@ -83,7 +83,7 @@ class CubieLocationAnalyzer:
             cube_side_length=self._side_length,
             track_location=self._track_item_location
         )
-        # Perform the desired shift and shift the content.
+        # Perform the desired shift and shift the src.
         temp_cube.shift(key=key)
         temp_cube.shift_cubie_content()
 

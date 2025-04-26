@@ -5,8 +5,8 @@ import string
 import numpy as np
 from typing import List
 from collections import deque
-from content.helper.constant import Key
-from content.encrypt_item.cube import Cube
+from src.helper.constant import Key
+from src.encitem.cube import Cube
 
 
 class Encryption:
@@ -65,7 +65,7 @@ class Encryption:
         for each_key in key:
             # Shift all the cubes.
             for cube in self._cubes:
-                # Shift content.
+                # Shift src.
                 cube.shift_content()
                 # Perform cube move.
                 cube.shift(key=each_key)
@@ -87,7 +87,7 @@ class Encryption:
                         index=each_key.index
                     )
                 )
-                # Shift content backward.
+                # Shift src backward.
                 cube.shift_content_back()
 
     def get_decrypted_str(self) -> str:

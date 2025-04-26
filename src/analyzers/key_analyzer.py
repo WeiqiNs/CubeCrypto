@@ -3,7 +3,7 @@ import operator
 from functools import reduce
 from typing import List, Optional
 from collections import namedtuple
-from content.helper.constant import Key, CUBE_MOVE, COMMUTE_MOVE
+from src.helper.constant import Key, CUBE_MOVE, COMMUTE_MOVE
 
 
 class KeyAnalyzer:
