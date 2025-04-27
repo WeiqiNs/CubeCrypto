@@ -1,1 +1,2 @@
+# Treat all .ipynb files as external files.
 *.ipynb linguist-vendored
