@@ -73,7 +73,7 @@ class CubieLocationAnalyzer:
         ]
 
     def _get_location(self, key: Key) -> int:
-        """Get the location of the tracked item after performing an effective key.
+        """Get the location of the tracked item after performing a key.
 
         :param key: One known effective key.
         :return: New location of the tracked item.

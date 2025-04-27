@@ -1,9 +1,8 @@
 import numpy as np
 
 from src.encitem.face import Face
-from src.helper.constant import WRONG_CUBE_FACE_INPUT, WRONG_FRAME_COLUMN_NAME, \
-    WRONG_FRAME_INDEX_NAME, \
-    WRONG_SIDE_LENGTH
+from src.helper.constant import WRONG_CUBE_FACE_INPUT, \
+    WRONG_FRAME_COLUMN_NAME, WRONG_FRAME_INDEX_NAME, WRONG_SIDE_LENGTH
 
 
 class TestCubeFace:
