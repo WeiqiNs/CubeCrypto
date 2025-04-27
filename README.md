@@ -1,6 +1,6 @@
 ### Rubik's Cube Encryption
 [![CI](https://github.com/WeiqiNs/CubeCrypto/actions/workflows/ci.yml/badge.svg)](https://github.com/WeiqiNs/CubeCrypto/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/WeiqiNs/CubeCrypto/graph/badge.svg?token=nLPYss2X9g)](https://codecov.io/gh/WeiqiNs/CubeCrypto)
+[![codecov](https://codecov.io/gh/WeiqiNs/CubeCrypto/branch/master/graph/badge.svg?token=nLPYss2X9g)](https://codecov.io/gh/WeiqiNs/CubeCrypto)
 ![Code Style: Ruff](https://img.shields.io/badge/Code%20Style-Ruff-blueviolet)
 ![Code Style: Flake8](https://img.shields.io/badge/Code%20Style-Flake8-blue)
 
