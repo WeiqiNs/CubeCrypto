@@ -31,7 +31,7 @@ jobs:
         run: |
           flake8
           ruff check src/
-          pytest -cov=src
+          pytest --cov=src
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
