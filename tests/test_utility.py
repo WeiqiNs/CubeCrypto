@@ -1,5 +1,3 @@
-from collections import deque
-
 import pandas as pd
 
 import src.helper.utility as utility
@@ -41,15 +39,15 @@ class TestUtility:
 
     def test_cube_frame_column(self):
         assert utility.get_frame_column(cube_side_length=4) == \
-            deque(["L2", "L1", "R1", "R2"])
+            ["L2", "L1", "R1", "R2"]
         assert utility.get_frame_column(cube_side_length=5) == \
-            deque(["L2", "L1", "C", "R1", "R2"])
+            ["L2", "L1", "C", "R1", "R2"]
 
     def test_cube_frame_index(self):
         assert utility.get_frame_index(cube_side_length=4) == \
-            deque(["T2", "T1", "D1", "D2"])
+            ["T2", "T1", "D1", "D2"]
         assert utility.get_frame_index(cube_side_length=5) == \
-            deque(["T2", "T1", "C", "D1", "D2"])
+            ["T2", "T1", "C", "D1", "D2"]
 
     def test_xor(self):
         assert utility.xor(str_one="1001", str_two="1100") == "0101"

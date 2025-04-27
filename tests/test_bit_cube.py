@@ -39,7 +39,7 @@ class TestCubeOperations:
         assert self.cube.content == self.cube_input
 
     def test_top_shift(self):
-        # This is the case where the top face rotate. (4 by 4 by 4 cube)
+        # This is the case where the top face rotates. (4 by 4 by 4 cube)
         cube = Cube(cube_input=self.cube_input, cube_side_length=4)
         cube._shift_t(index=2)
         assert cube.content == "01010101010101010101010101010101" \
@@ -56,7 +56,7 @@ class TestCubeOperations:
                                "60606060606060606060606060606060"
 
     def test_down_shift(self):
-        # This is the case where the down face rotate. (4 by 4 by 4 cube)
+        # This is the case where the down face rotates. (4 by 4 by 4 cube)
         cube = Cube(cube_input=self.cube_input, cube_side_length=4)
         cube._shift_d(index=2)
         assert cube.content == "10101010101010101010101010101010" \
@@ -73,7 +73,7 @@ class TestCubeOperations:
                                "60606060606060605050505050505050"
 
     def test_right_shift(self):
-        # This is the case where the right face rotate. (4 by 4 by 4 cube)
+        # This is the case where the right face rotates. (4 by 4 by 4 cube)
         cube = Cube(cube_input=self.cube_input, cube_side_length=4)
         cube._shift_r(index=2)
         assert cube.content == "10101010101020201010101010102020" \
@@ -90,7 +90,7 @@ class TestCubeOperations:
                                "60606060606060606060606060606060"
 
     def test_left_shift(self):
-        # This is the case where the left face rotate. (4 by 4 by 4 cube)
+        # This is the case where the left face rotates. (4 by 4 by 4 cube)
         cube = Cube(cube_input=self.cube_input, cube_side_length=4)
         cube._shift_l(index=2)
         assert cube.content == "50501010101010105050101010101010" \
@@ -107,7 +107,7 @@ class TestCubeOperations:
                                "06060606060606060606060606060606"
 
     def test_front_shift(self):
-        # This is the case where the front face rotate. (4 by 4 by 4 cube)
+        # This is the case where the front face rotates. (4 by 4 by 4 cube)
         cube = Cube(cube_input=self.cube_input, cube_side_length=4)
         cube._shift_f(index=2)
         assert cube.content == "10101010101010101010101010101010" \
@@ -124,7 +124,7 @@ class TestCubeOperations:
                                "60606060606004046060606060600404"
 
     def test_back_shift(self):
-        # This is the case where the back face rotate. (4 by 4 by 4 cube)
+        # This is the case where the back face rotates. (4 by 4 by 4 cube)
         cube = Cube(cube_input=self.cube_input, cube_side_length=4)
         cube._shift_b(index=2)
         assert cube.content == "03030303030303031010101010101010" \
@@ -141,7 +141,7 @@ class TestCubeOperations:
                                "01016060606060600101606060606060"
 
     def test_middle_shift(self):
-        # This is the case where the back face rotate. (4 by 4 by 4 cube)
+        # This is the case where the back face rotates. (4 by 4 by 4 cube)
         cube = Cube(cube_input=self.cube_input, cube_side_length=4)
         cube._shift_r(index=1)
         assert cube.content == "10101010202010101010101020201010" \
@@ -230,7 +230,7 @@ class TestCubeShift:
             "290141236345856778901234123456783456789056789012"
 
     def test_location_null(self):
-        # Create the cube without location tracker.
+        # Create the cube without a location tracker.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         try:
             cube.get_tracked_location()

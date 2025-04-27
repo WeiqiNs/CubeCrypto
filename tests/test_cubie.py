@@ -31,7 +31,7 @@ class TestCubie:
 class TestCubieErrorCheck:
     def test_init(self):
         try:
-            Cubie(cubie_input=list("abracadabra"))
+            Cubie(cubie_input=list("abracadabra"))  # type: ignore
             raise AssertionError("Error message did not raise.")
         except AssertionError as error:
             assert str(error) == WRONG_CUBIE_INPUT

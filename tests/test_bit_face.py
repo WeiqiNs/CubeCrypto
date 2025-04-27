@@ -1,5 +1,3 @@
-from collections import deque
-
 from src.encbit.cubie import Cubie
 from src.encbit.face import Face
 from src.helper.constant import CubieItem, WRONG_CUBE_FACE_INPUT, \
@@ -27,15 +25,15 @@ class TestCubeFace:
 
     def test_cube_frame_column(self):
         assert self.cube_face.get_frame_column(cube_side_length=4) == \
-            deque(["L2", "L1", "R1", "R2"])
+               ["L2", "L1", "R1", "R2"]
         assert self.cube_face.get_frame_column(cube_side_length=5) == \
-            deque(["L2", "L1", "C", "R1", "R2"])
+               ["L2", "L1", "C", "R1", "R2"]
 
     def test_cube_frame_index(self):
         assert self.cube_face.get_frame_index(cube_side_length=4) == \
-            deque(["T2", "T1", "D1", "D2"])
+               ["T2", "T1", "D1", "D2"]
         assert self.cube_face.get_frame_index(cube_side_length=5) == \
-            deque(["T2", "T1", "C", "D1", "D2"])
+               ["T2", "T1", "C", "D1", "D2"]
 
     def test_cube_row(self):
         # Get rows and check if they contain the desired value.
@@ -45,7 +43,7 @@ class TestCubeFace:
         assert row_d1.iloc[0].get_content_string() == "1010"
 
     def test_cube_fill_row(self):
-        # Create a new testing cube face since the value get changed.
+        # Create a new testing cube face since the value gets changed.
         cube_face = Face(
             cube_face_input=self.face_input,
             cube_side_length=3
@@ -78,7 +76,7 @@ class TestCubeFace:
         assert col_l1.iloc[0].get_content_string() == "0001"
 
     def test_cube_fill_col(self):
-        # Create a new testing cube face since the value get changed.
+        # Create a new testing cube face since the value gets changed.
         cube_face = Face(
             cube_face_input=self.face_input,
             cube_side_length=3
@@ -111,7 +109,7 @@ class TestCubeFace:
         assert row_d1_str == "|1010|1010|1010|"
 
     def test_cube_face_rotate(self):
-        # Create a new testing cube face since the value get changed.
+        # Create a new testing cube face since the value gets changed.
         cube_face = Face(
             cube_face_input=self.face_input,
             cube_side_length=3
@@ -135,7 +133,7 @@ class TestCubeFaceErrorCheck:
     def test_init(self):
         try:
             Face(
-                cube_face_input=list("abracadabra"),
+                cube_face_input=list("abracadabra"),  # type: ignore
                 cube_side_length=3
             )
             raise AssertionError("Error message did not raise.")
@@ -147,7 +145,7 @@ class TestCubeFaceErrorCheck:
             self.cube_face.fill_row(
                 row_name="T1",
                 input_list=[
-                    Cubie(cubie_input=list("0000"))
+                    Cubie(cubie_input=list("0000"))  # type: ignore
                 ]
             )
             raise AssertionError("Error message did not raise.")
@@ -158,9 +156,9 @@ class TestCubeFaceErrorCheck:
             self.cube_face.fill_row(
                 row_name="abracadabra",
                 input_list=[
-                    Cubie(cubie_input=list("0000")),
-                    Cubie(cubie_input=list("0000")),
-                    Cubie(cubie_input=list("0000"))
+                    Cubie(cubie_input=list("0000")),  # type: ignore
+                    Cubie(cubie_input=list("0000")),  # type: ignore
+                    Cubie(cubie_input=list("0000"))  # type: ignore
                 ]
             )
             raise AssertionError("Error message did not raise.")
@@ -172,7 +170,7 @@ class TestCubeFaceErrorCheck:
             self.cube_face.fill_col(
                 col_name="R1",
                 input_list=[
-                    Cubie(cubie_input=list("0000"))
+                    Cubie(cubie_input=list("0000"))  # type: ignore
                 ]
             )
             raise AssertionError("Error message did not raise.")
@@ -183,9 +181,9 @@ class TestCubeFaceErrorCheck:
             self.cube_face.fill_col(
                 col_name="abracadabra",
                 input_list=[
-                    Cubie(cubie_input=list("0000")),
-                    Cubie(cubie_input=list("0000")),
-                    Cubie(cubie_input=list("0000"))
+                    Cubie(cubie_input=list("0000")),  # type: ignore
+                    Cubie(cubie_input=list("0000")),  # type: ignore
+                    Cubie(cubie_input=list("0000"))  # type: ignore
                 ]
             )
             raise AssertionError("Error message did not raise.")

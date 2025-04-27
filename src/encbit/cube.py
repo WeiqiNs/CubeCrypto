@@ -11,19 +11,19 @@ from src.helper.utility import xor
 
 
 class Cube:
-    """Create a full cube with desired side length on inputs."""
+    """Create a full cube with the desired side length on inputs."""
 
     def __init__(self,
                  cube_input: str,
                  cube_side_length: int,
                  track_location: int = None):
-        """Initialize entire cube with a string of desired length.
+        """Initialize the entire cube with a string of the desired length.
 
         :param cube_input: The binary representation of the plain text.
         :param cube_side_length: The desired side length of the cube.
         :param track_location: The desired item locations to keep track.
         """
-        # Check length of the input.
+        # Check the length of the input.
         assert len(cube_input) == cube_side_length ** 2 * 6 * CUBIE_LENGTH, \
             WRONG_CUBE_INPUT
         assert cube_side_length > 1, WRONG_CUBE_SIDE_LENGTH
@@ -93,9 +93,9 @@ class Cube:
 
     @property
     def message_content(self) -> str:
-        """Format all cubies that hold message into a continuous string.
+        """Format all cubies that hold a message into a continuous string.
 
-        :return: A string contains all cubies that hold message.
+        :return: A string contains all cubies that hold a message.
         """
         # Get all cube faces as string in the right order.
         return \
@@ -107,7 +107,7 @@ class Cube:
 
     @property
     def message_content_list(self) -> List[str]:
-        """Format all cubies that hold message into list of strings by faces.
+        """Format all cubies that hold a message into a list of strings.
 
         :return: A list of strings that hold the actual message.
         """
@@ -145,15 +145,15 @@ class Cube:
             if cubie.marked:
                 return location
 
-        # If no location was found, throw value error.
+        # If no location was found, throw a value error.
         raise ValueError("No Tracked Location")
 
     def shift_cubie_content(self):
         """Shift the cube binary representation to right by one bit."""
-        # Obtain the shifted src by padding the last bit to the first.
+        # Get the shifted src by padding the last bit to the first.
         shifted_content = f"{self.content[-1]}{self.content[:-1]}"
 
-        # Find the the track location.
+        # Find the track location.
         track_location = None if self._track_location is None else \
             (self.get_tracked_location() + 1) % self._cube_size
 
@@ -165,11 +165,11 @@ class Cube:
         )
 
     def shift_cubie_content_back(self):
-        """Shift the cube binary representation to left by one bit."""
-        # Obtain the shifted src by padding the first bit to the last.
+        """Shift the cube binary representation to the left by one bit."""
+        # Get the shifted src by padding the first bit to the last.
         shifted_content = f"{self.content[1:]}{self.content[0]}"
 
-        # Find the the track location.
+        # Find the track location.
         track_location = None if self._track_location is None else \
             (self.get_tracked_location() - 1) % self._cube_size
 
@@ -402,7 +402,7 @@ class Cube:
         self._down_face.fill_col(col_name=f"L{index}", input_list=temp_col)
 
     def shift(self, key: Key):
-        """Shift the cube with a move in certain amount of angle.
+        """Shift the cube with a move in a certain number of angles.
 
         :param key: A named tuple that holds information for one shift.
         """

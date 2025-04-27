@@ -23,7 +23,7 @@ class Encryption:
         # Remove blanks and punctuations.
         message = self.process_string(message=message)
 
-        # Store the important information for other method to access.
+        # Store the important information for another method to access.
         chunk_size = cube_side_length ** 2 * 6
         self.pad_size = chunk_size - len(message) % chunk_size
 
@@ -40,7 +40,10 @@ class Encryption:
 
         # Get the cubes.
         self._cubes = [
-            Cube(cube_input=message, cube_side_length=cube_side_length)
+            Cube(
+                cube_input=message.tolist(),
+                cube_side_length=cube_side_length
+            )
             for message in messages
         ]
         # Set up the holder for the key.
@@ -48,7 +51,7 @@ class Encryption:
 
     @staticmethod
     def process_string(message: str) -> str:
-        """Remove blanks and punctuations in input and make it lowercase."""
+        """Remove blank and punctuation in the input and make it lowercase."""
         return "".join([
             char if char in string.ascii_letters else "" for char in message
         ]).lower()
@@ -71,7 +74,7 @@ class Encryption:
                 cube.shift_content()
                 # Perform cube move.
                 cube.shift(key=each_key)
-            # Append the used key to key list.
+            # Append the used key to a key list.
             self._key.append(each_key)
 
     def decrypt(self):
@@ -97,7 +100,7 @@ class Encryption:
 
         :return: The original message that was encrypted as a string.
         """
-        # First make sure that all cubes are decrypted.
+        # First, make sure that all cubes are decrypted.
         self.decrypt()
         # Return the decrypted string.
         return self.get_current_content()[:-self.pad_size]

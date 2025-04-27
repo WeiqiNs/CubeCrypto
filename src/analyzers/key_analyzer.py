@@ -38,7 +38,7 @@ class KeyAnalyzer:
 
     @staticmethod
     def _merge_commute_key_list(commute_key: List[Key]) -> Optional[List[Key]]:
-        """Given a list of commute keys, merge keys with same move and index.
+        """Given a list of keys, merge keys with the same move and index.
 
         :param commute_key: A list of commute keys.
         :return: The reduced list of keys.
@@ -53,7 +53,7 @@ class KeyAnalyzer:
                 # If the key share same index and move with the starting key.
                 if each_key.move == commute_key[start_index].move \
                       and each_key.index == commute_key[start_index].index:
-                    # Do the merge and replace start key.
+                    # Do the merge and replace the start key.
                     commute_key[start_index] = Key(
                         move=commute_key[start_index].move,
                         index=commute_key[start_index].index,
@@ -75,7 +75,7 @@ class KeyAnalyzer:
         ]
 
     def _get_commute_key_list(self) -> List[List[Key]]:
-        """Split list of keys to list of lists of commute keys."""
+        """Split a list of keys to a list of lists of commute keys."""
         # Set the starting index to 0 and initialize the key index list.
         start_index = 0
         key_index_list = []
@@ -85,9 +85,10 @@ class KeyAnalyzer:
 
         # While not at the end of the key list, keep checking.
         while start_index < len(self._key):
-            # Let end index be the same as the start index.
+            # Let the end index be the same as the start index.
             end_index = start_index
-            # If current key and next key commute, increase end index by 1.
+            # If the current key and next key commute, increase the end
+            # index by 1.
             while end_index + 1 < len(self._key) and \
                 self._commute(move_one=self._key[end_index].move,
                               move_two=self._key[end_index + 1].move):
@@ -96,10 +97,10 @@ class KeyAnalyzer:
             key_index_list.append(
                 commute_key_index(start_index=start_index, end_index=end_index)
             )
-            # Increase start index by 1.
+            # Increase the start index by 1.
             start_index = end_index + 1
 
-        # Based on the start and end index, get list of lists of commute keys.
+        # Based on the start and end index, get a list of lists of keys.
         commute_key_list = [
             self._key[key_index.start_index: key_index.end_index + 1]
             if key_index.start_index != key_index.end_index
@@ -110,9 +111,9 @@ class KeyAnalyzer:
         return commute_key_list
 
     def _merge_key(self) -> bool:
-        """Merge the given list of keys once.
+        """Merge the given list of keys at once.
 
-        :return: If merge performed, return True, otherwise return False.
+        :return: If a merge is performed, return True, otherwise return False.
         """
         # Get the list of merged key lists.
         merged_key_lists = [
@@ -123,7 +124,7 @@ class KeyAnalyzer:
         # Flatten the list of lists to one list.
         merged_key = reduce(operator.concat, merged_key_lists)
 
-        # See if the number of keys were reduced, if yes return True.
+        # If the number of keys was reduced, return True.
         if len(merged_key) != len(self._key):
             self._key = merged_key
             return True

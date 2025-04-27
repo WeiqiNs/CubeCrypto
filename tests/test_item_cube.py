@@ -24,7 +24,7 @@ class TestCubeOperations:
         assert self.cube.content == self.cube_input
 
     def test_top_shift(self):
-        # This is the case where the top face rotate.
+        # This is the case where the top face rotates.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         cube.shift(Key(move=CubeMove.top.value, angle=90, index=1))
         assert np.array_equal(
@@ -34,7 +34,7 @@ class TestCubeOperations:
         )
 
     def test_down_shift(self):
-        # This is the case where the down face rotate.
+        # This is the case where the down face rotates.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         cube.shift(Key(move=CubeMove.down.value, angle=90, index=1))
         assert np.array_equal(
@@ -44,7 +44,7 @@ class TestCubeOperations:
         )
 
     def test_right_shift(self):
-        # This is the case where the right face rotate.
+        # This is the case where the right face rotates.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         cube.shift(Key(move=CubeMove.right.value, angle=90, index=1))
         assert np.array_equal(
@@ -54,7 +54,7 @@ class TestCubeOperations:
         )
 
     def test_left_shift(self):
-        # This is the case where the left face rotate.
+        # This is the case where the left face rotates.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         cube.shift(Key(move=CubeMove.left.value, angle=90, index=1))
         assert np.array_equal(
@@ -64,7 +64,7 @@ class TestCubeOperations:
         )
 
     def test_front_shift(self):
-        # This is the case where the front face rotate.
+        # This is the case where the front face rotates.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         cube.shift(Key(move=CubeMove.front.value, angle=90, index=1))
         assert np.array_equal(
@@ -74,7 +74,7 @@ class TestCubeOperations:
         )
 
     def test_back_shift(self):
-        # This is the case where the back face rotate.
+        # This is the case where the back face rotates.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         cube.shift(Key(move=CubeMove.back.value, angle=90, index=1))
         assert np.array_equal(
@@ -87,7 +87,7 @@ class TestCubeOperations:
         # Create the cube.
         cube = Cube(cube_input=self.cube_input, cube_side_length=2)
         try:
-            # Use a invalid key.
+            # Use an invalid key.
             cube.shift(Key(move="abracadabra", angle=90, index=0))
             raise AssertionError("Error message did not raise.")
         except ValueError as error:

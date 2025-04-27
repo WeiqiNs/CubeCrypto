@@ -15,41 +15,41 @@ class TestCubeFace:
         assert np.array_equal(self.cube_face.get_item_list, self.face_input)
 
     def test_cube_row(self):
-        # Get rows and check if they contain desired value.
+        # Get rows and check if they contain the desired value.
         assert self.cube_face.get_row(row_name="T1").iloc[0] == 0
         assert self.cube_face.get_row(row_name="D1").iloc[0] == 6
 
     def test_cube_fill_row(self):
-        # Create new testing cube face since the value get changed.
+        # Create a new testing cube face since the value gets changed.
         cube_face = Face(
             face_input=self.face_input, side_length=3
         )
         cube_face.fill_row(row_name="T1", input_list=[100, 200, 300])
-        # Get row and check if it contains desired value.
+        # Get a row and check if it contains the desired value.
         assert cube_face.get_row(row_name="T1").iloc[0] == 100
 
     def test_cube_col(self):
-        # Get cols and check if they contain desired value.
+        # Get cols and check if they contain the desired value.
         assert self.cube_face.get_col(col_name="R1").iloc[0] == 2
         assert self.cube_face.get_col(col_name="L1").iloc[0] == 0
 
     def test_cube_fill_col(self):
-        # Create new testing cube face since the value get changed.
+        # Create a new testing cube face since the value gets changed.
         cube_face = Face(
             face_input=self.face_input,
             side_length=3
         )
         cube_face.fill_col(col_name="R1", input_list=[100, 200, 300])
-        # Get col and check if it contains desired value.
+        # Get col and check if it contains the desired value.
         assert cube_face.get_col(col_name="R1").iloc[0] == 100
 
     def test_cube_rotate(self):
-        # Create new testing cube face since the value get changed.
+        # Create a new testing cube face since the value gets changed.
         cube_face = Face(
             face_input=self.face_input,
             side_length=3
         )
-        # Rotate the face and check if it contains desired value.
+        # Rotate the face and check if it contains the desired value.
         cube_face.rotate_by_angle(angle=90)
         assert np.array_equal(
             cube_face.get_item_list, [6, 3, 0, 7, 4, 1, 8, 5, 2]

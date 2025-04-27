@@ -3,14 +3,13 @@
 import numpy as np
 import pandas as pd
 
-from src.helper.constant import WRONG_CUBE_FACE_INPUT, WRONG_FRAME_COLUMN_NAME, \
-    WRONG_FRAME_INDEX_NAME, \
-    WRONG_SIDE_LENGTH
+from src.helper.constant import WRONG_CUBE_FACE_INPUT, \
+    WRONG_FRAME_COLUMN_NAME, WRONG_FRAME_INDEX_NAME, WRONG_SIDE_LENGTH
 from src.helper.utility import get_frame_column, get_frame_index
 
 
 class Face:
-    """Create a cube face with required side length on inputs."""
+    """Create a cube face with the required side length on inputs."""
 
     def __init__(self, face_input: list, side_length: int):
         """Initialize one cube face.
@@ -47,7 +46,7 @@ class Face:
 
     def fill_row(self, row_name: str, input_list: list):
         """Fill one row in the cube face by index with a list."""
-        # Error check. The input length is the same as side length of the cube.
+        # Error check. The input length is the same as the side length.
         assert len(input_list) == self._side_length, WRONG_SIDE_LENGTH
         # Error check. The index is not out of the list.
         assert row_name in self._face_item_frame.index, WRONG_FRAME_INDEX_NAME
@@ -61,7 +60,7 @@ class Face:
 
     def fill_col(self, col_name: str, input_list: list):
         """Fill one column in the cube face by index with a list."""
-        # Error check. The input length is the same as side length of the cube.
+        # Error check. The input length is the same as the side length.
         assert len(input_list) == self._side_length, WRONG_SIDE_LENGTH
         # Error check. The index is not out of the list.
         assert col_name in self._face_item_frame.columns, \

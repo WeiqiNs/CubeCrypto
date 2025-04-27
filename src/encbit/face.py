@@ -15,7 +15,7 @@ from src.helper.constant import CUBIE_LENGTH, CubieItem, WRONG_CUBE_FACE_INPUT, 
 
 
 class Face:
-    """Create a cube face with desired side length on inputs."""
+    """Create a cube face with the desired side length on inputs."""
 
     def __init__(self,
                  cube_face_input: List[CubieItem],
@@ -59,7 +59,7 @@ class Face:
         # Convert each cubie to its string format.
         cubie_strings = [
             cubie.get_content_string()
-            for cubie in self._face_cubie_frame.values.flat
+            for cubie in list(self._face_cubie_frame.values.flat)
         ]
 
         # Concatenate the list to a string.
@@ -72,18 +72,18 @@ class Face:
         return list(itertools.chain.from_iterable(
             [
                 cubie.get_content()
-                for cubie in self._face_cubie_frame.values.flat
+                for cubie in list(self._face_cubie_frame.values.flat)
             ]
         ))
 
     @staticmethod
-    def get_frame_column(cube_side_length: int) -> deque:
+    def get_frame_column(cube_side_length: int) -> list:
         """Get column names for the cube face data frame.
 
         :param cube_side_length: The desired side length of the cube.
-        :return: A deque object with the column names.
+        :return: A list object with the column names.
         """
-        # If side length is even, start with empty queue.
+        # If the side length is even, start with an empty queue.
         if cube_side_length % 2 == 0:
             column_queue = deque()
             # Pad R on the right side and L on the left side.
@@ -99,16 +99,16 @@ class Face:
                 column_queue.appendleft(f"L{move_index}")
                 column_queue.append(f"R{move_index}")
 
-        return column_queue
+        return list(column_queue)
 
     @staticmethod
-    def get_frame_index(cube_side_length: int) -> deque:
+    def get_frame_index(cube_side_length: int) -> list:
         """Get index names for the cube face data frame.
 
         :param cube_side_length: The desired side length of the cube.
-        :return: A deque object with the index names.
+        :return: A list object with the index names.
         """
-        # If side length is even, start with empty queue.
+        # If the side length is even, start with an empty queue.
         if cube_side_length % 2 == 0:
             index_queue = deque()
             # Pad D on the right side and T on the left side.
@@ -124,7 +124,7 @@ class Face:
                 index_queue.appendleft(f"T{move_index}")
                 index_queue.append(f"D{move_index}")
 
-        return index_queue
+        return list(index_queue)
 
     def get_row(self, row_name: str) -> pd.Series:
         """Get one row in the cube face by index as a list of cubies."""
@@ -133,7 +133,7 @@ class Face:
 
     def fill_row(self, row_name: str, input_list: List[Cubie]):
         """Fill one row in the cube face by index with a list of cubies."""
-        # Error check. The input length is the same as side length of the cube.
+        # Error check. The input length is the same as the side length.
         assert len(input_list) == self._side_length, WRONG_SIDE_LENGTH
 
         # Error check. The index is not out of the list.
@@ -149,7 +149,7 @@ class Face:
 
     def fill_col(self, col_name: str, input_list: List[Cubie]):
         """Fill one column in the cube face by index with a list of cubies."""
-        # Error check. The input length is the same as side length of the cube.
+        # Error check. The input length is the same as the side length.
         assert len(input_list) == self._side_length, WRONG_SIDE_LENGTH
 
         # Error check. The index is not out of the list.
@@ -173,7 +173,7 @@ class Face:
     def rotate_by_angle(self, angle: int):
         """Rotate the cube face and its cubies by the desired angle."""
         # Iterate over and rotate each cubie in the cube face.
-        for cubie in self._face_cubie_frame.values.flat:
+        for cubie in list(self._face_cubie_frame.values.flat):
             cubie.rotate_by_angle(angle=angle)
 
         # Rotate the face itself.

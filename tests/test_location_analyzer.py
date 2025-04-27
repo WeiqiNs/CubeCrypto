@@ -44,7 +44,7 @@ class TestCubieLocationAnalyzer:
         )
 
     def test_location_tracker(self):
-        # Set up analyzer and the key to perform checking.
+        # Set up an analyzer and the key to perform checking.
         analyzer = CubieLocationAnalyzer(
             cube_side_length=3, track_item_location=0
         )

@@ -28,7 +28,7 @@ def generate_random_keys(length: int, max_index: int) -> List[Key]:
 
 
 def get_key_table(key: List[Key]) -> pd.DataFrame:
-    """Get list of keys as a DataFrame."""
+    """Get a list of keys as a DataFrame."""
     # Extract the values from NamedTuple to list.
     key_value_list = [[key.move, key.index, key.angle] for key in key]
 
@@ -50,13 +50,13 @@ def get_cube_layout(cube_side_length: int) -> pd.DataFrame:
     )
 
 
-def get_frame_column(cube_side_length: int) -> deque:
+def get_frame_column(cube_side_length: int) -> list:
     """Get column names for the cube face data frame.
 
     :param cube_side_length: The desired side length of the cube.
-    :return: A deque object with the column names.
+    :return: A list object with the column names.
     """
-    # If side length is even, start with empty queue.
+    # If the side length is even, start with an empty queue.
     if cube_side_length % 2 == 0:
         column_queue = deque()
         # Pad R on the right side and L on the left side.
@@ -72,16 +72,16 @@ def get_frame_column(cube_side_length: int) -> deque:
             column_queue.appendleft(f"L{move_index}")
             column_queue.append(f"R{move_index}")
 
-    return column_queue
+    return list(column_queue)
 
 
-def get_frame_index(cube_side_length: int) -> deque:
+def get_frame_index(cube_side_length: int) -> list:
     """Get index names for the cube face data frame.
 
     :param cube_side_length: The desired side length of the cube.
-    :return: A deque object with the index names.
+    :return: A list object with the index names.
     """
-    # If side length is even, start with empty queue.
+    # If the side length is even, start with an empty queue.
     if cube_side_length % 2 == 0:
         index_queue = deque()
         # Pad D on the right side and T on the left side.
@@ -97,7 +97,7 @@ def get_frame_index(cube_side_length: int) -> deque:
             index_queue.appendleft(f"T{move_index}")
             index_queue.append(f"D{move_index}")
 
-    return index_queue
+    return list(index_queue)
 
 
 def string_to_binary(input_string: str) -> str:
@@ -109,14 +109,14 @@ def string_to_binary(input_string: str) -> str:
     byte_from_str = binascii.a2b_qp(input_string)
     binary_from_byte = bin(int.from_bytes(byte_from_str, byteorder="big"))
     binary_from_byte = binary_from_byte.replace("b", "")
-    # Make sure what ever being returned is multiple of 8.
+    # Make sure whatever being returned is multiple of 8.
     return f"{'0' * (8 - len(binary_from_byte) % 8)}{binary_from_byte}" \
         if len(binary_from_byte) % 8 != 0 \
         else binary_from_byte
 
 
 def binary_to_string(input_binary: str) -> str:
-    """Convert binary string to Ascii string.
+    """Convert a binary string to Ascii string.
 
     :param input_binary: An input binary encoded string.
     :return: The Ascii encoded equivalence of the input binary string.

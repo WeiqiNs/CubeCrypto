@@ -31,27 +31,27 @@ class Cubie:
         return "".join(map(lambda item: str(item.content), self._content))
 
     def rotate_by_angle(self, angle: int):
-        """Rotate the cubie src by desired angle.
+        """Rotate the cubie src by the desired angle.
 
         :param angle: The angle of desired rotation.
         """
-        # Error check. Only possible angles are 90, 180 and 270 degrees.
+        # Error check. The only possible angles are 90, 180 and 270 degrees.
         assert angle in MOVE_ANGLE, WRONG_ROTATION_ANGLE
-        # Find how many clockwise 90 degree is needed.
+        # Find how many clockwise 90 degrees are needed.
         rotate_step = int(angle / 90)
-        # Do the desired amount of rotations.
+        # Do the desired number of rotations.
         self._content.rotate(rotate_step)
 
     def get_rotate_by_angle(self, angle: int) -> Cubie:
-        """Rotate the cubie src by desired angle and return the result.
+        """Rotate the cubie src by the desired angle and return the result.
 
         :param angle: The angle of desired rotation.
         """
-        # Error check. Only possible angles are 90, 180 and 270 degrees.
+        # Error check. The only possible angles are 90, 180 and 270 degrees.
         assert angle in MOVE_ANGLE, WRONG_ROTATION_ANGLE
-        # Find how many clockwise 90 degree is needed.
+        # Find how many clockwise 90 degrees are needed.
         rotate_step = int(angle / 90)
-        # Do the desired amount of rotations.
+        # Do the desired number of rotations.
         self._content.rotate(rotate_step)
         # Return the desired result.
         return self

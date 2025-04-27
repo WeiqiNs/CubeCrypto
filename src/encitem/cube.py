@@ -10,15 +10,15 @@ from src.helper.constant import CubeMove, Key, WRONG_CUBE_INPUT, \
 
 
 class Cube:
-    """Create a full cube with desired side length on inputs."""
+    """Create a full cube with the desired side length on inputs."""
 
     def __init__(self, cube_input: list, cube_side_length: int):
-        """Initialize entire cube with a list of items.
+        """Initialize the entire cube with a list of items.
 
-        :param cube_input: A list of any type of inputs.
+        :param cube_input: A list of any typed inputs.
         :param cube_side_length: The desired side length of the cube.
         """
-        # Check length of the input.
+        # Check the length of the input.
         assert cube_side_length > 1, WRONG_CUBE_SIDE_LENGTH
         assert len(cube_input) == cube_side_length ** 2 * 6, WRONG_CUBE_INPUT
 
@@ -37,27 +37,27 @@ class Cube:
         #   - 5. Left face
         #   - 6. Down face
         self._top_face = Face(
-            face_input=cube_input_list[0],
+            face_input=cube_input_list[0].tolist(),
             side_length=cube_side_length
         )
         self._front_face = Face(
-            face_input=cube_input_list[1],
+            face_input=cube_input_list[1].tolist(),
             side_length=cube_side_length
         )
         self._right_face = Face(
-            face_input=cube_input_list[2],
+            face_input=cube_input_list[2].tolist(),
             side_length=cube_side_length
         )
         self._back_face = Face(
-            face_input=cube_input_list[3],
+            face_input=cube_input_list[3].tolist(),
             side_length=cube_side_length
         )
         self._left_face = Face(
-            face_input=cube_input_list[4],
+            face_input=cube_input_list[4].tolist(),
             side_length=cube_side_length
         )
         self._down_face = Face(
-            face_input=cube_input_list[5],
+            face_input=cube_input_list[5].tolist(),
             side_length=cube_side_length
         )
 
@@ -71,7 +71,7 @@ class Cube:
 
     def shift_content(self):
         """Shift the cube binary representation to right by one item."""
-        # Obtain the shifted src by padding the last bit to the first.
+        # Get the shifted src by padding the last bit to the first.
         shifted_content = [self.content[-1]] + self.content[:-1]
         # Re-Init the class with new src.
         self.__init__(
@@ -79,8 +79,8 @@ class Cube:
         )
 
     def shift_content_back(self):
-        """Shift the cube binary representation to left by one item."""
-        # Obtain the shifted src by padding the first bit to the last.
+        """Shift the cube binary representation to the left by one item."""
+        # Get the shifted src by padding the first bit to the last.
         shifted_content = self.content[1:] + [self.content[0]]
         # Re-Init the class with new src.
         self.__init__(
@@ -259,7 +259,7 @@ class Cube:
         self._down_face.fill_col(col_name=f"L{index}", input_list=temp_col)
 
     def shift(self, key: Key):
-        """Shift the cube with a move in certain amount of angle.
+        """Shift the cube with a move in a certain number of angles.
 
         :param key: A named tuple that holds information for one shift.
         """
